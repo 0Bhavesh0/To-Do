@@ -19,7 +19,7 @@ function addTask() {
     const closeButton = document.createElement('span');
     closeButton.textContent = '\u00d7';
     taskItem.appendChild(closeButton);
-    listContainer.appendChild(taskItem);
+    listContainer.prepend(taskItem);
 
     completedPara.classList.add('active');
 
