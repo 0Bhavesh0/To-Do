@@ -4,57 +4,51 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
-    
 }
 
-.wrapper{
+.wrapper {
     background-color: #496989;
     width: 100vw;
     height: 100vh;
     color: #F8F6E3;
 }
 
-.todo-container{
-    /* border: 1px solid red; */
-    background-color:#58A399 ;
+.todo-container {
+    background-color: #58A399;
     width: 40%;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
     margin-top: 50px;
-
 }
 
-.todo-container h2{
+.todo-container h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
-.input-field{
+.input-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;  
+    margin-bottom: 20px;
     background-color: #F8F6E3;
     border-radius: 20px;
-
-
 }
 
-.input-field input{
+.input-field input {
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
     background: transparent;
-    /* border: 1px solid blue; */
     text-align: left;
     flex: 1;
     padding-left: 20px;
     font-size: large;
 }
 
-.input-field button{
+.input-field button {
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -63,11 +57,10 @@
     outline: none;
     background-color: #77B0AA;
     font-size: large;
-
-    
 }
 
-.list-container li, .completed li{
+.list-container li,
+.completed li {
     list-style: none;
     background-color: rgba(226, 226, 221, 0.26);
     color: white;
@@ -78,12 +71,11 @@
     user-select: none;
     padding-left: 40px;
     position: relative;
-    
 }
 
-.list-container li::before{
+.list-container li::before,
+.completed li::before {
     content: "";
-    /* margin-right: 10px; */
     position: absolute;
     width: 20px;
     height: 20px;
@@ -95,37 +87,41 @@
     top: 9px;
 }
 
-.list-container .checked, .completed .checked{
+.list-container .checked,
+.completed .checked {
     color: #dfded7;
     text-decoration: line-through;
-    /* background-color: #77B0AA; */
 }
 
-.list-container .checked::before, .completed .checked::before{
+.list-container .checked::before,
+.completed .checked::before {
     background-image: url('assets/icons8-checked-50.png');
     background-size: cover;
     background-color: #77B0AA;
 }
 
-.list-container li span, .completed li span{
+.list-container li span,
+.completed li span {
     position: absolute;
-    /* color: aliceblue; */
     right: 7px;
     font-size: 24px;
     bottom: 5px;
     text-align: center;
     width: 29px;
     height: 29px;
-    /* border: 1px solid red; */
     border-radius: 50%;
 }
 
-span :hover{
+span :hover {
     background-color: #fff;
-    /* border: 1px solid red; */
 }
 
-.completed-para{
+.completed-para {
     margin: 10px;
     margin-top: 20px;
+    display: none;
+}
+
+.active {
+    display: block;
 }
