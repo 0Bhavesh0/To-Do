@@ -49,10 +49,24 @@ btn.addEventListener('click', addTask);
 // }
 
 // clearBtn.addEventListener('click', clearAll);
+function handleCompletedClick(e) {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+        listContainer.appendChild(e.target);
+        saveData();
+    }
 
+    else if (e.target.tagName === 'SPAN') {
+        e.target.parentElement.remove();
 
+        if (completed.querySelectorAll('li').length === 0) {
+            completedPara.classList.remove('active');
+        }
+        saveData();
+    }
+}
 
-listContainer.addEventListener('click', (e) => {
+function handleListCLick(e){
     const target = e.target
     if (target.tagName === 'LI') {
         target.classList.toggle('checked');
@@ -65,26 +79,15 @@ listContainer.addEventListener('click', (e) => {
         saveData();
 
     }
+}
 
-});
 
 
-completed.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.toggle('checked');
-        listContainer.appendChild(e.target);
-        saveData();
-    }
+listContainer.addEventListener('click', handleListCLick);
 
-    if (e.target.tagName === 'SPAN') {
-        e.target.parentElement.remove();
+completed.addEventListener('click', handleCompletedClick);
 
-        if (completed.querySelectorAll('li').length === 0) {
-            completedPara.classList.remove('active');
-        }
-        saveData();
-    }
-});
+
 
 function saveData() {
     localStorage.setItem('listContainer', listContainer.innerHTML);
